@@ -12,5 +12,50 @@ body {
 
 :root{
     --background-color: rgb(143, 77, 59);
-    --header-color: white;
+    --text-color: white;
 }
+
+.wrapper{
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 2fr 1fr 4fr;
+    background-color: var(--background-color);
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    font-size: 120px;
+    font-weight: bold;
+    color: var(--text-color);
+    border-bottom: 5px solid var(--text-color);
+
+}
+
+
+.book-selection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1.5rem;
+}
+
+.btn{
+    border-radius: 2.5rem;
+    width: 18rem;
+    height: 3.5rem;
+
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.btn:hover{
+    cursor: pointer;
+    background-color: rgb(185, 185, 185);
+}
+
+
