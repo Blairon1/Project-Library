@@ -36,7 +36,8 @@ const newBookBtn = document.querySelector('.btn');
 
 const modal = document.querySelector('#book-creation');
 const closeModal = document.querySelector('.close-window');
-const submitBook = document.querySelector('.submit-book');
+
+const libraryForm = document.getElementById('library-form');
 
 newBookBtn.addEventListener('click', ()=>{
     modal.showModal();
@@ -44,6 +45,22 @@ newBookBtn.addEventListener('click', ()=>{
 
 closeModal.addEventListener('click', ()=>{
     modal.close();
+})
+
+libraryForm.addEventListener('submit', (event)=>{
+    event.preventDefault();
+
+    bookName = libraryForm.elements.bookName.value;
+    author = libraryForm.elements.author.value;
+    numOfPages = libraryForm.elements.numOfPages.value;
+    hasRead = libraryForm.elements.hasRead.checked;
+
+    addBookToLibrary(bookName,author,numOfPages,hasRead);
+
+    modal.close();
+    displayBooksToUsers(myLibrary);
+    libraryForm.reset();
+
 })
 
 

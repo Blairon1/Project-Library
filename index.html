@@ -16,7 +16,7 @@
         <div class="main-section">
             <dialog class="book-creation" id="book-creation">
                 <h2 style="margin-bottom: 1.8rem;">Complete the following information</h2>
-                <form action="form" method="dialog" class="library-form">
+                <form action="form" method="dialog" class="library-form" id="library-form">
                     <label for="bname">Book Name:</label>
                     <input type="text" name="bookName" id="bname" required minlength="1" maxlength="23"> <br>
 
@@ -27,7 +27,7 @@
                     <input type="number" name="numOfPages" id="nopages" required min="1" max="10000"> <br>
 
                     <label for="hread">Has you read this book?</label>
-                    <input type="checkbox" name="hasRead" id="hread" required>
+                    <input type="checkbox" name="hasRead" id="hread">
 
                     <button class="close-window" formnovalidate type="button">Close Window</button>
                     <button class="submit-book" type="submit">Submit Book</button>
