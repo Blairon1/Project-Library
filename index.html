@@ -10,11 +10,29 @@
 <body>
     <div class="wrapper">
         <div class="header">Library</div>
-        <div class="book-selection">
+        <div class="book-addition">
             <button class="btn">Add a new Book!</button>
         </div>
         <div class="main-section">
-            <div class="books" id="1"></div>
+            <dialog class="book-creation" id="book-creation">
+                <h2 style="margin-bottom: 1.8rem;">Complete the following information</h2>
+                <form action="form" method="dialog" class="library-form">
+                    <label for="bname">Book Name:</label>
+                    <input type="text" name="bookName" id="bname" required minlength="1" maxlength="23"> <br>
+
+                    <label for="aname">Author:</label>
+                    <input type="text" name="author" id="aname" required minlength="1" maxlength="23"> <br>
+
+                    <label for="nopages">Number of Pages:</label>
+                    <input type="number" name="numOfPages" id="nopages" required min="1" max="10000"> <br>
+
+                    <label for="hread">Has you read this book?</label>
+                    <input type="checkbox" name="hasRead" id="hread" required>
+
+                    <button class="close-window" formnovalidate type="button">Close Window</button>
+                    <button class="submit-book" type="submit">Submit Book</button>
+                </form>
+            </dialog>
         </div>
 
 
