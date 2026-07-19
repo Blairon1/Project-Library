@@ -20,6 +20,8 @@ function addBookToLibrary(name, author, numOfPages, hasRead){
 
 function displayBooksToUsers(library){
     console.table(library);
+
+
 }
 
 function removeBookFromLibrary(){
@@ -32,21 +34,22 @@ function toggleReadBookStatus(){
 
 
 
-const newBookBtn = document.querySelector('.btn');
-
-const modal = document.querySelector('#book-creation');
-const closeModal = document.querySelector('.close-window');
-
-const libraryForm = document.getElementById('library-form');
-
+// Open the form for adding a book to the library
+const modal = document.querySelector('#book-creation'); // Reference to the dialog element for libraryaddition
+const newBookBtn = document.querySelector('.btn'); // Reference to "Add a new Book" button
 newBookBtn.addEventListener('click', ()=>{
     modal.showModal();
 })
 
+// Close the form for adding a book to the library
+const closeModal = document.querySelector('.close-window'); // Reference to the close window button in the dialog element
 closeModal.addEventListener('click', ()=>{
     modal.close();
 })
 
+
+// Adding a new book to the library
+const libraryForm = document.getElementById('library-form'); // Reference to the form for adding a new book to the library
 libraryForm.addEventListener('submit', (event)=>{
     event.preventDefault();
 
@@ -62,6 +65,8 @@ libraryForm.addEventListener('submit', (event)=>{
     libraryForm.reset();
 
 })
+
+
 
 
 

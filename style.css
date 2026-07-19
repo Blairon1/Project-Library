@@ -4,12 +4,15 @@ body {
   font-family: "DM Sans", "Roboto", "Times New Roman", Times, serif;
 }
 
+/* -- Global Formatting -- */
+
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* -- Custom Properties -- */
 :root{
     --background-color: rgb(143, 77, 59);
     --text-color: white;
@@ -21,6 +24,8 @@ body {
     grid-template-rows: 2fr 1fr 4fr;
     background-color: var(--background-color);
 }
+
+/* -- Header Component -- */
 
 .header{
     display: flex;
@@ -44,6 +49,8 @@ body {
     padding: 1.5rem;
 }
 
+
+/* -- "Add a new Book!" Button -- */
 .btn{
     border-radius: 2.5rem;
     width: 18rem;
@@ -59,9 +66,14 @@ body {
 }
 
 
+/* -- Main Section -- */
+
 .main-section{
     position: relative;
 }
+
+
+/* -- Dialog Form  -- */
 
 .book-creation[open]{
     width: 30rem;
