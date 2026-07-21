@@ -120,10 +120,6 @@ libraryForm.addEventListener('submit', (event)=>{
 
 
 
-addBookToLibrary("Harry Potter","JK Rowling",500,true);
-addBookToLibrary("1984","George Orwell",328,false);
-addBookToLibrary("To Kill A Mockingbird","Harper Lee",280,true);
-displayBooksToUsers(myLibrary);
 
 /*
 addBookToLibrary("Harry Potter","JK Rowling",500,true);
