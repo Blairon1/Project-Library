@@ -2,9 +2,10 @@
 Build a responsive Library allowing users to add books using primarily Javascript, CSS Grid and HTML as part of the Odin-Project Curriculum
 
 ## Live Demo
-TBA
+https://blairon1.github.io/Project-Library/
 
 ## GitHub Repository
+https://github.com/Blairon1/Project-Library
 
 ## About
 Created a library interface primarily CSS Grid (and possibly Flexbox) and implemented logic for users to create, add, toggle read status and delete books from the library
