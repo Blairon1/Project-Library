@@ -7,7 +7,13 @@ function Book(name, author, numOfPages, hasRead, ID){
     this.numOfPages = numOfPages;
     this.hasRead = hasRead;
     this.ID = ID;
+}
 
+// Prototype function for Book constructor that toggles read status of books
+Book.prototype.toggleReadBookStatus = function(){
+    console.log(`Book(${this.ID}) | Old read status: ${this.hasRead}`);
+    this.hasRead = !(this.hasRead);
+    console.log(`Book(this.ID) | New read status: ${this.hasRead}`);
 }
 
 
@@ -31,7 +37,6 @@ function displayBooksToUsers(library) {
 
         // Clone the entire template
         const bookClone = bookTemplate.content.cloneNode(true);
-        
 
         // Change the cloned content
         bookClone.querySelector(".bookTitle").textContent = `Book Title: ${book.name}`;
@@ -44,8 +49,10 @@ function displayBooksToUsers(library) {
         // Set read status
         if (book.hasRead) {
             bookClone.querySelector(".hasReadBtn").textContent = "Yes";
+            bookClone.querySelector(".hasReadBtn").style.backgroundColor = 'green';
         } else {
             bookClone.querySelector(".hasReadBtn").textContent = "No";
+            bookClone.querySelector(".hasReadBtn").style.backgroundColor = 'red';
         }
 
         // Remove Book from library Method
@@ -61,6 +68,19 @@ function displayBooksToUsers(library) {
             
         })
 
+        // Toggle read status of book
+        const toggleBtn = bookClone.querySelector(".hasReadBtn");
+        toggleBtn.addEventListener("click", ()=>{
+            book.toggleReadBookStatus();
+            if(book.hasRead){
+               toggleBtn.textContent = "Yes";
+               toggleBtn.style.backgroundColor = 'green';
+            }else{
+                toggleBtn.textContent = "No";
+                toggleBtn.style.backgroundColor = 'red';
+            }
+        })
+
         // Add the completed book card to the page
         mainSection.appendChild(bookClone);
 
@@ -72,13 +92,6 @@ function displayBooksToUsers(library) {
     
 }
 
-
-
-
-
-function toggleReadBookStatus(){
-
-}
 
 
 
@@ -114,17 +127,3 @@ libraryForm.addEventListener('submit', (event)=>{
 
 })
 
-
-
-
-
-
-
-
-/*
-addBookToLibrary("Harry Potter","JK Rowling",500,true);
-addBookToLibrary("1984","George Orwell",328,false);
-addBookToLibrary("To Kill A Mockingbird","Harper Lee",280,true);
-addBookToLibrary("Moby-Dick","Herman Melville",625,false);
-displayBooksToUsers(myLibrary);
-*/
