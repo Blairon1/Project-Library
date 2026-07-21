@@ -89,7 +89,7 @@ libraryForm.addEventListener('submit', (event)=>{
 
     modal.close();
     displayBooksToUsers(myLibrary);
-    libraryForm.reset();
+    libraryForm.reset(); // Reset form inputs to default (empty)
 
 })
 
@@ -101,9 +101,10 @@ libraryForm.addEventListener('submit', (event)=>{
 
 
 
-
+/*
 addBookToLibrary("Harry Potter","JK Rowling",500,true);
 addBookToLibrary("1984","George Orwell",328,false);
 addBookToLibrary("To Kill A Mockingbird","Harper Lee",280,true);
 addBookToLibrary("Moby-Dick","Herman Melville",625,false);
 displayBooksToUsers(myLibrary);
+*/
