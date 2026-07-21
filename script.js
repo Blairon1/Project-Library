@@ -18,15 +18,37 @@ function addBookToLibrary(name, author, numOfPages, hasRead){
     myLibrary.push(newBook);
 }
 
-function displayBooksToUsers(library){
-    //const bookTab = document.getElementsByClassName("book-display");
-    //const bookTabClone = bookTab.content.cloneNode(true);
+function displayBooksToUsers(library) {
 
+    const mainSection = document.getElementById("main-section");
+    const bookTemplate = document.querySelector(".book-display");
 
-    
-    
+    // Remove all previously displayed books
+    mainSection.replaceChildren();
+
+    for (const book of library) {
+
+        // Clone the entire template
+        const bookClone = bookTemplate.content.cloneNode(true);
+        
+
+        // Change the cloned content
+        bookClone.querySelector(".bookTitle").textContent = `Book Title: ${book.name}`;
+        bookClone.querySelector(".bookAuthor").textContent = `Author: ${book.author}`;
+        bookClone.querySelector(".numPages").textContent = `Number of pages: ${book.numOfPages}`;
+
+        // Set read status
+        if (book.hasRead) {
+            bookClone.querySelector(".hasReadBtn").textContent = "Yes";
+        } else {
+            bookClone.querySelector(".hasReadBtn").textContent = "No";
+        }
+
+        // Add the completed book card to the page
+        mainSection.appendChild(bookClone);
+    }
+
     console.table(library);
-    
 }
 
 function removeBookFromLibrary(){
@@ -58,10 +80,10 @@ const libraryForm = document.getElementById('library-form'); // Reference to the
 libraryForm.addEventListener('submit', (event)=>{
     event.preventDefault();
 
-    bookName = libraryForm.elements.bookName.value;
-    author = libraryForm.elements.author.value;
-    numOfPages = libraryForm.elements.numOfPages.value;
-    hasRead = libraryForm.elements.hasRead.checked;
+    const bookName = libraryForm.elements.bookName.value;
+    const author = libraryForm.elements.author.value;
+    const numOfPages = libraryForm.elements.numOfPages.value;
+    const hasRead = libraryForm.elements.hasRead.checked;
 
     addBookToLibrary(bookName,author,numOfPages,hasRead);
 
@@ -79,10 +101,9 @@ libraryForm.addEventListener('submit', (event)=>{
 
 
 
-/*
+
 addBookToLibrary("Harry Potter","JK Rowling",500,true);
 addBookToLibrary("1984","George Orwell",328,false);
 addBookToLibrary("To Kill A Mockingbird","Harper Lee",280,true);
 addBookToLibrary("Moby-Dick","Herman Melville",625,false);
 displayBooksToUsers(myLibrary);
-*/

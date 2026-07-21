@@ -70,6 +70,9 @@ body {
 
 .main-section{
     position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 16px;
 }
 
 
@@ -128,22 +131,19 @@ input{
 }
 
 /* -- Each Book Display -- */
-.book-display{
+.book-card {
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
     width: 400px;
     height: 100px;
-
     position: relative;
-
-
-    font-weight: 600;
+    font-weight: 400;
     font-size: 18px;
     outline: 4px solid white;
 }
 
-.book-display button{
+.book-card button{
     position: absolute;
     right: 32%;
     top: 72%;
@@ -157,32 +157,34 @@ input{
     font-weight: bold;
 }
 
-.book-display button:hover{
+.book-card button:hover{
     cursor: pointer;
 }
 
-.book-display img{
+.book-card img{
     width: 80px;
     height: 60px;
 }
 
-#bookTitle{
+.bookTitle{
     position: absolute;
-    right: 47%;
-    top: 6%;
+    top: 10%;
     color: white;
 }
 
-#bookAuthor{
+.bookAuthor{
     position: absolute;
-    right: 53%;
-    top: 29%;
+    top: 31%;
     color: white;
 }
 
-#numPages{
+.hasRead{
     position: absolute;
-    right: 35%;
+    top: 72%;
+}
+
+.numPages{
+    position: absolute;
     top: 51%;
     color: white;
 }

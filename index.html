@@ -13,8 +13,8 @@
         <div class="book-addition">
             <button class="btn">Add a new Book!</button>
         </div>
-        <div class="main-section">
-            <dialog class="book-creation" id="book-creation">
+        <div class="main-section" id="main-section"></div>
+        <dialog class="book-creation" id="book-creation">
                 <h2 style="margin-bottom: 1.8rem;">Complete the following information</h2>
                 <form action="form" method="dialog" class="library-form" id="library-form">
                     <label for="bname">Book Name:</label>
@@ -34,25 +34,20 @@
                 </form>
             </dialog>
 
-            <div class="book-display">
+        <template class="book-display">
+            <div class="book-card">
                 <img src="icons/book-open-variant-outline.svg" alt="Book Icon">
+
                 <div class="book-info">
-                    <p>Book Title:</p> <p id="bookTitle"> TBA</p>
-                    <p>Author: </p> <p id="bookAuthor"> TBA</p>
-                    <p>Number of Pages: </p> <p id="numPages"> TBA</p>
-                    <p>Have you read it: </p>
-                    <button id="hasReadBtn"> Yes</button>
+                    <p class="bookTitle"></p>
+                    <p class="bookAuthor"> </p>
+                    <p class="numPages">TBA</p>
+
+                    <p class="hasRead">Have you read it:</p>
+                    <button class="hasReadBtn">Yes</button>
                 </div>
             </div>
-        </div>
-
-
-
-
-
-
-
-
+        </template>
     </div>
     
 </body>
