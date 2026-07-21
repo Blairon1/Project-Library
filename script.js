@@ -19,9 +19,14 @@ function addBookToLibrary(name, author, numOfPages, hasRead){
 }
 
 function displayBooksToUsers(library){
+    //const bookTab = document.getElementsByClassName("book-display");
+    //const bookTabClone = bookTab.content.cloneNode(true);
+
+
+    
+    
     console.table(library);
-
-
+    
 }
 
 function removeBookFromLibrary(){
