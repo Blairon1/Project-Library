@@ -166,6 +166,22 @@ input{
     height: 60px;
 }
 
+.book-info img{
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    width: 42px;
+    height: 42px;
+
+    /* https://codepen.io/sosuke/pen/Pjoqqp | Where I got the line for coloring svg icons using img tag*/
+    filter: invert(41%) sepia(93%) saturate(7354%) hue-rotate(353deg) brightness(96%) contrast(131%); 
+}
+
+.book-info img:hover{
+    cursor: pointer;
+    filter: invert(10%) sepia(32%) saturate(7452%) hue-rotate(351deg) brightness(110%) contrast(117%);
+}
+
 .bookTitle{
     position: absolute;
     top: 10%;

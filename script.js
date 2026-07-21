@@ -18,6 +18,7 @@ function addBookToLibrary(name, author, numOfPages, hasRead){
     myLibrary.push(newBook);
 }
 
+
 function displayBooksToUsers(library) {
 
     const mainSection = document.getElementById("main-section");
@@ -37,6 +38,9 @@ function displayBooksToUsers(library) {
         bookClone.querySelector(".bookAuthor").textContent = `Author: ${book.author}`;
         bookClone.querySelector(".numPages").textContent = `Number of pages: ${book.numOfPages}`;
 
+        const uniqueID = `data-${book.ID}`; // Create data attribute of book's unique id
+        bookClone.querySelector(".book-card").classList.add(uniqueID); // Add data attribute as a class
+
         // Set read status
         if (book.hasRead) {
             bookClone.querySelector(".hasReadBtn").textContent = "Yes";
@@ -44,16 +48,33 @@ function displayBooksToUsers(library) {
             bookClone.querySelector(".hasReadBtn").textContent = "No";
         }
 
+        // Remove Book from library Method
+        const closeBtn = bookClone.querySelector(".close-book");
+        closeBtn.addEventListener("click", ()=>{
+            const IDToBeDeleted = book.ID;
+
+            const index = library.findIndex(book => book.ID === IDToBeDeleted); // Locate index of book with matchign ID
+            if (index !== -1) {
+                library.splice(index, 1); // Start from the index and delete one book
+            }
+            displayBooksToUsers(library);
+            
+        })
+
         // Add the completed book card to the page
         mainSection.appendChild(bookClone);
+
     }
 
+
+
     console.table(library);
+    
 }
 
-function removeBookFromLibrary(){
 
-}
+
+
 
 function toggleReadBookStatus(){
 
@@ -99,7 +120,10 @@ libraryForm.addEventListener('submit', (event)=>{
 
 
 
-
+addBookToLibrary("Harry Potter","JK Rowling",500,true);
+addBookToLibrary("1984","George Orwell",328,false);
+addBookToLibrary("To Kill A Mockingbird","Harper Lee",280,true);
+displayBooksToUsers(myLibrary);
 
 /*
 addBookToLibrary("Harry Potter","JK Rowling",500,true);
