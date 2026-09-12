@@ -1,4 +1,4 @@
-@import url('https://googleapis.com');
+@import url("https://googleapis.com");
 
 body {
   font-family: "DM Sans", "Roboto", "Times New Roman", Times, serif;
@@ -6,202 +6,227 @@ body {
 
 /* -- Global Formatting -- */
 
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* -- Custom Properties -- */
-:root{
-    --background-color: rgb(143, 77, 59);
-    --text-color: white;
+:root {
+  --background-color: rgb(143, 77, 59);
+  --text-color: white;
 }
 
-.wrapper{
-    min-height: 100vh;
-    display: grid;
-    grid-template-rows: 2fr 1fr 4fr;
-    background-color: var(--background-color);
+.wrapper {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 2fr 1fr 4fr;
+  background-color: var(--background-color);
 }
 
 /* -- Header Component -- */
 
-.header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-
-    font-size: 120px;
-    font-weight: bold;
-    color: var(--text-color);
-    border-bottom: 5px solid var(--text-color);
-
+  font-size: 120px;
+  font-weight: bold;
+  color: var(--text-color);
+  border-bottom: 5px solid var(--text-color);
 }
 
+.book-addition {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-.book-addition{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 1.5rem;
+  padding: 1.5rem;
 }
-
 
 /* -- "Add a new Book!" Button -- */
-.btn{
-    border-radius: 2.5rem;
-    width: 18rem;
-    height: 3.5rem;
+.btn {
+  border-radius: 2.5rem;
+  width: 18rem;
+  height: 3.5rem;
 
-    font-weight: bold;
-    font-size: 1.5rem;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
-.btn:hover{
-    cursor: pointer;
-    background-color: rgb(185, 185, 185);
+.btn:hover {
+  cursor: pointer;
+  background-color: rgb(185, 185, 185);
 }
-
 
 /* -- Main Section -- */
 
-.main-section{
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 400px);
-    justify-content: start;
-    gap: 16px;
+.main-section {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 400px);
+  justify-content: start;
+  gap: 16px;
 }
-
 
 /* -- Dialog Form  -- */
 
-.book-creation[open]{
-    width: 30rem;
-    height: 18rem;
-    padding-top: 0.5rem;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.book-creation[open] {
+  width: 40rem;
+  height: 28rem;
+  padding-top: 0.5rem;
 
-    margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: auto;
 }
 
-.book-creation::backdrop{
-    background-color: black;
-    opacity: 0.4;
+.book-creation::backdrop {
+  background-color: black;
+  opacity: 0.4;
 }
 
-.submit-book{
-    position: absolute;
-    bottom: 20px;
-    right: 30px;
+.submit-book {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
 
-    width: 10rem;
-    height: 2rem;
-    border-radius: 2.5rem;
-    font-weight: 700;
+  width: 10rem;
+  height: 2rem;
+  border-radius: 2.5rem;
+  font-weight: 700;
 }
 
-.close-window{
-    position: absolute;
-    bottom: 20px;
-    left: 30px;
+.close-window {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
 
-    width: 10rem;
-    height: 2rem;
-    border-radius: 2.5rem;
-    font-weight: 700;
+  width: 10rem;
+  height: 2rem;
+  border-radius: 2.5rem;
+  font-weight: 700;
 }
 
-label{
-    font-weight: 600;
-    font-size: 1.12rem;
-
+label {
+  font-weight: 600;
+  font-size: 1.12rem;
 }
 
-input{
-    margin-bottom: 1rem;
-    border-radius: 1.2rem;
-    font-size: 1.3rem;
-    padding: 0px 8px;
+input {
+  margin-bottom: 1rem;
+  border-radius: 1.2rem;
+  font-size: 1.3rem;
+  padding: 0px 8px;
+}
+
+input:invalid {
+  border-color: #990000;
+  background-color: #ffdddd;
+}
+
+input:focus:invalid {
+  outline: none;
+}
+
+input:valid {
+  border-color: green;
+}
+
+/* error message styles */
+.error {
+  width: 100%;
+  padding: 0;
+
+  font-size: 80%;
+  color: white;
+  background-color: #990000;
+  border-radius: 0 0 5px 5px;
+
+  box-sizing: border-box;
+}
+
+.error.active {
+  padding: 0.3em;
 }
 
 /* -- Each Book Display -- */
 .book-card {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-    width: 400px;
-    height: 100px;
-    position: relative;
-    font-weight: 400;
-    font-size: 18px;
-    outline: 4px solid white;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  width: 400px;
+  height: 100px;
+  position: relative;
+  font-weight: 400;
+  font-size: 18px;
+  outline: 4px solid white;
 }
 
-.book-card button{
-    position: absolute;
-    right: 32%;
-    top: 72%;
+.book-card button {
+  position: absolute;
+  right: 32%;
+  top: 72%;
 
-    width: 48px;
-    border-radius: 2rem;
+  width: 48px;
+  border-radius: 2rem;
 
-    background-color: green; /* Sets the background to blue */
-    color: white;
+  background-color: green; /* Sets the background to blue */
+  color: white;
 
-    font-weight: bold;
+  font-weight: bold;
 }
 
-.book-card button:hover{
-    cursor: pointer;
+.book-card button:hover {
+  cursor: pointer;
 }
 
-.book-card img{
-    width: 80px;
-    height: 60px;
+.book-card img {
+  width: 80px;
+  height: 60px;
 }
 
-.book-info img{
-    position: absolute;
-    right: 0%;
-    top: 0%;
-    width: 42px;
-    height: 42px;
+.book-info img {
+  position: absolute;
+  right: 0%;
+  top: 0%;
+  width: 42px;
+  height: 42px;
 
-    /* https://codepen.io/sosuke/pen/Pjoqqp | Where I got the line for coloring svg icons using img tag*/
-    filter: invert(41%) sepia(93%) saturate(7354%) hue-rotate(353deg) brightness(96%) contrast(131%); 
+  /* https://codepen.io/sosuke/pen/Pjoqqp | Where I got the line for coloring svg icons using img tag*/
+  filter: invert(41%) sepia(93%) saturate(7354%) hue-rotate(353deg)
+    brightness(96%) contrast(131%);
 }
 
-.book-info img:hover{
-    cursor: pointer;
-    filter: invert(10%) sepia(32%) saturate(7452%) hue-rotate(351deg) brightness(110%) contrast(117%);
+.book-info img:hover {
+  cursor: pointer;
+  filter: invert(10%) sepia(32%) saturate(7452%) hue-rotate(351deg)
+    brightness(110%) contrast(117%);
 }
 
-.bookTitle{
-    position: absolute;
-    top: 10%;
-    color: white;
+.bookTitle {
+  position: absolute;
+  top: 10%;
+  color: white;
 }
 
-.bookAuthor{
-    position: absolute;
-    top: 31%;
-    color: white;
+.bookAuthor {
+  position: absolute;
+  top: 31%;
+  color: white;
 }
 
-.hasRead{
-    position: absolute;
-    top: 72%;
+.hasRead {
+  position: absolute;
+  top: 72%;
 }
 
-.numPages{
-    position: absolute;
-    top: 51%;
-    color: white;
+.numPages {
+  position: absolute;
+  top: 51%;
+  color: white;
 }
